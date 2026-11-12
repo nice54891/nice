@@ -1,0 +1,159 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BACKGROUND */
+body {
+    font-family: 'Kanit', sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #e9e4ff,
+        #dceeff,
+        #f4eaff
+    );
+}
+
+/* MAIN CONTAINER */
+.container {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+
+    background: rgba(255,255,255,0.95);
+    padding: 35px;
+    border-radius: 25px;
+
+    box-shadow: 0 15px 40px rgba(92,78,150,0.13);
+    text-align: center;
+}
+
+/* TITLE */
+h1 {
+    color: #6554a4;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* WELCOME */
+#welcome {
+    color: #8875d6;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+/* DESCRIPTION */
+p {
+    color: #999;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+/* NUMBER AREA */
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    gap: 10px;
+
+    width: 100%;
+    margin-top: 25px;
+}
+
+/* NUMBER BUTTON */
+#buttons button {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    border: 2px solid #e3dcff;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #eee9ff,
+        #e1efff
+    );
+
+    color: #6554a4;
+
+    font-family: 'Kanit', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* HOVER EFFECT */
+#buttons button:hover {
+    background: linear-gradient(
+        135deg,
+        #8875d6,
+        #6a9fe8
+    );
+
+    color: white;
+    border-color: #8875d6;
+
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(136,117,214,0.25);
+}
+
+/* CLICK EFFECT */
+#buttons button:active {
+    transform: scale(0.94);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 18px;
+    }
+
+    #buttons {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    body {
+        padding: 15px 8px;
+    }
+
+    .container {
+        padding: 22px 12px;
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
+
+    #welcome {
+        font-size: 19px;
+    }
+
+    #buttons {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    #buttons button {
+        font-size: 15px;
+        border-radius: 9px;
+    }
+}

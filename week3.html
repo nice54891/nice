@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My game</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <h1>My game</h1>
+    <div class="container">
+        <label>เกมทาย(คนใน)ใจ</label>
+        <label>กรุณาบอกชื่อ</label>    
+        <input type="text" id="playerName">
+
+        <button onclick="startGame()">เริ่มเกม</button>
+    </div>
+    <button>
+        <a href="home.html">back</a>
+    </button>
+    <script>
+        function startGame(){
+            let name = document.getElementById("playerName").value;
+
+            if(name.trim() === ""){
+                alert("กรุณากรอกชี่อ");
+            } else {
+                window.location.href="game.html?name="+encodeURIComponent();
+            }     
+        }
+   
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Guess The Lucky Button</h1>
+
+        <h2 id="welcome"></h2>
+
+        <p>ลองกดปุ่มตัวเลขเพื่อค้นหาปุ่มที่ถูกต้อง!</p>
+
+        <div id="buttons"></div>
+
+    <script>
+        // รับชื่อจาก URL
+        const data = new URLSearchParams(window.location.search);
+        let name = data.get("name");
+
+        // แสดงชื่อผู้เล่น
+        document.getElementById("welcome").textContent = "ยินดีต้อนรับ " + name;
+
+        // สุ่มตัวเลขคำตอบ
+        let target = Math.floor(Math.random() * 100) + 1;
+        console.log("ตัวเลขที่ถูกต้องคือ: " + target); // สำหรับการทดสอบ
+
+        // สร้างปุ่มตัวเลข 1-100
+        for (let i = 1; i <= 100; i++) {
+
+            let btn = document.createElement("button");
+
+            btn.textContent = i;
+
+            btn.onclick = function() {
+
+                if (i === target) {
+                    alert("เจอแล้ว! คุณเก่งมาก");
+                } else {
+                    alert("อาจจะยัง ลองอีกครั้ง");
+                }
+
+            };
+
+            document.getElementById("buttons").appendChild(btn);
+        }
+        
+    </script>
+
+</body>
+</html>
